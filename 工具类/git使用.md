@@ -3,6 +3,8 @@
 - [1. 初始化仓库](#1-初始化仓库)
 - [2.与远程仓库建立连接](#2与远程仓库建立连接)
 - [3.各种撤回](#3各种撤回)
+- [4.分支管理](#4分支管理)
+- [5.bug分支](#5bug分支)
 
 <!-- /TOC -->
 
@@ -14,6 +16,8 @@
 # 2.与远程仓库建立连接
 - git remote add origin https://github.com/minghuan2046/note.git   
     其中origin是远程别称，url是远程仓库地址
+- git push -u origin master
+    将本地分支推向远程master分支，并且与远程master分支建立关联
 
 # 3.各种撤回  
 - ## 撤回工作区的修改  
@@ -24,7 +28,7 @@
 
 - ## 撤回暂存区的修改
   git reset HEAD readme.md   
-  HEAD表示最新版本，上述语句表示讲暂存区的修改退回到上一版本，此时工作区还未被回退。
+  HEAD表示最新版本，上述语句表示将暂存区的修改退回到上一版本，此时工作区还未被回退。
 - ## 放弃本地所做的修改，与远程仓库保持一致
   一. 通过git reflog 查询得到远程仓库最后提交的版本号，通过执行
     git reset --hard ××× 回退  
@@ -39,3 +43,27 @@
   查看每次提交的日志
   - git reflog
   查看所有活动日志
+
+# 4.分支管理
+- ## 创建并切换分支  
+  git checkout -b dev
+  新建dev分支并切换到dev
+
+- ## 切换分支
+  git branch dev  
+
+- ## 合并分支
+  git merge dev
+
+- ## 删除分支  
+  git branch -d dev
+
+# 5.bug分支
+- git stash  
+  保存工作现场(工作区)
+- git stash list  
+  列举工作现场
+- git stash pop  
+  恢复现场
+- git stash apply stash@{0}
+  恢复到指定现场
