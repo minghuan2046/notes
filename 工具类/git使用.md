@@ -1,6 +1,5 @@
-
-[TOC]
-
+* TOC
+{:toc}
 #### 1. 初始化仓库
 - git init  
 
