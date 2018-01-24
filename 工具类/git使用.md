@@ -36,7 +36,8 @@
 
 - ## 退回到之前的某一版本
    - 退回一个版本： git reset --hard HEAD^
-   - 退回多个版本： git reset -- hard ×××
+   - 退回多个版本： git reset --hard ×××  
+   注意--与hard之间不能有空格
 
 - ## 查看git日志
   - git log  
