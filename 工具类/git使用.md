@@ -67,3 +67,5 @@
   恢复现场
 - git stash apply stash@{0}
   恢复到指定现场
+- git stash drop stash@{0}
+  删除指定现场，其中通过git stash pop恢复的被被自动删除，通过git stash apply恢复的需要手动删除
