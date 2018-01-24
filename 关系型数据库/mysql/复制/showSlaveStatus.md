@@ -34,10 +34,10 @@ sql线程执行中继日志的位置
 
 ## Slave_IO_Running
 slave线程是否启动并连接到master节点，
-如下三种状态:
-MYSQL_SLAVE_NOT_RUN：IO线程未启动
-MYSQL_SLAVE_RUN_NOT_CONNECT：IO线程启动但未连接到master
-MYSQL_SLAVE_RUN_CONNECT：IO线程启动并连接，此时显示为yes  
+如下三种状态:  
+MYSQL_SLAVE_NOT_RUN：IO线程未启动  
+MYSQL_SLAVE_RUN_NOT_CONNECT：IO线程启动但未连接到master  
+MYSQL_SLAVE_RUN_CONNECT：IO线程启动并连接，此时显示为yes    
 
 ## Slave_SQL_Running
 sql线程是否启动
