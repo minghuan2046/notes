@@ -1,4 +1,10 @@
-[TOC]
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [1. 初始化仓库](#1-初始化仓库)
+- [2.与远程仓库建立连接](#2与远程仓库建立连接)
+- [3.各种撤回](#3各种撤回)
+
+<!-- /TOC -->
 
 # 1. 初始化仓库
 - git init  
