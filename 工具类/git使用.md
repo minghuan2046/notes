@@ -11,11 +11,14 @@
 ---------------------------------
 
 # 1. 初始化仓库
+
 - git init  
 
 # 2.与远程仓库建立连接
+
 - git remote add origin https://github.com/minghuan2046/note.git   
     其中origin是远程别称，url是远程仓库地址
+
 - git push -u origin master
     将本地分支推向远程master分支，并且与远程master分支建立关联
 
@@ -28,7 +31,10 @@
 
 - ## 撤回暂存区的修改
   git reset HEAD readme.md   
-  HEAD表示最新版本，上述语句表示将暂存区的修改退回到上一版本，此时工作区还未被回退。
+  - HEAD表示最新版本，上述语句表示将暂存区的修改退回到上一版本，此时工作区还未被回退,再通过git checkout -- ×××撤回工作区的修改。
+  - 直接将暂存区和工作区退回到上一个版本
+  git reset --hard HEAD
+
 - ## 放弃本地所做的修改，与远程仓库保持一致
   一. 通过git reflog 查询得到远程仓库最后提交的版本号，通过执行
     git reset --hard ××× 回退  
@@ -45,13 +51,19 @@
   - git reflog
   查看所有活动日志
 
+- ## reset详解
+  reset是将分支末端指向另一个提交，可通过以下标记影响工作区和暂存区是否受影响
+  - --soft – 缓存区和工作目录都不会被改变
+  - --mixed – 默认选项。缓存区和你指定的提交同步，但工作目录不受影响
+  - --hard – 缓存区和工作目录都同步到你指定的提交
+
 # 4.分支管理
 - ## 创建并切换分支  
   git checkout -b dev
   新建dev分支并切换到dev
 
 - ## 切换分支
-  git branch dev  
+  git checkout dev  
 
 - ## 合并分支
   git merge dev
