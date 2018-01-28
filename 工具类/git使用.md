@@ -1,10 +1,13 @@
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [1. 初始化仓库](#1-初始化仓库)
-- [2.与远程仓库建立连接](#2与远程仓库建立连接)
-- [3.各种撤回](#3各种撤回)
-- [4.分支管理](#4分支管理)
-- [5.bug分支](#5bug分支)
+- [2.配置](#2配置)
+- [3.与远程仓库建立连接](#3与远程仓库建立连接)
+- [4.各种撤回](#4各种撤回)
+- [5.分支管理](#5分支管理)
+- [6.bug分支](#6bug分支)
+- [7.图解git](#7图解git)
+		- [[参考地址](https://github.com/geeeeeeeeek/git-recipes/wiki)](#参考地址httpsgithubcomgeeeeeeeeekgit-recipeswiki)
 
 <!-- /TOC -->
 
@@ -36,7 +39,7 @@ git config --global --edit
 - git push -u origin master
     将本地分支推向远程master分支，并且与远程master分支建立关联
 
-# 3.各种撤回  
+# 4.各种撤回  
 - ## 撤销未被跟踪的文件
     git clean -n  
     列出未被跟踪的文件  
@@ -109,7 +112,7 @@ git config --global --edit
   **revert在撤销某一提交的同时创建一个提交，所以提交历史都存在，所以是安全的方式。**
 
 
-# 4.分支管理
+# 5.分支管理
 - ## 创建并切换分支  
   git checkout -b dev
   新建dev分支并切换到dev
@@ -123,7 +126,7 @@ git config --global --edit
 - ## 删除分支  
   git branch -d dev
 
-# 5.bug分支
+# 6.bug分支
 - git stash  
   保存工作现场(工作区)
 - git stash list  
@@ -135,7 +138,7 @@ git config --global --edit
 - git stash drop stash@{0}
   删除指定现场，其中通过git stash pop恢复的被被自动删除，通过git stash apply恢复的需要手动删除
 
-# 6.图解git  
+# 7.图解git  
 
 - git仓库结构  
 ![仓库](./picture/git_space.png)
