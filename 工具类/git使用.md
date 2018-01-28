@@ -99,11 +99,12 @@ git config --global --edit
 
   **警告：reset 会重写版本，一般只能使用在本地更改，不能在公共分支上使用**
 
-- ## revert详解(用在公共分支)　　
-　git revert HEAD^2  
+- ## revert详解(用在公共分支)
+　　
+　git revert HEAD^2    
 　撤销两个提交，在撤销之前会先创建一个提交。撤销特定提交的更改。  
 
-  git revert ×××      
+  git revert ×××        
   撤销指定的提交  
 
   **revert在撤销某一提交的同时创建一个提交，所以提交历史都存在，所以是安全的方式。**
