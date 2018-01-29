@@ -1,5 +1,5 @@
 # 选项
--F :紧跟分隔符，表示读入的字段以输入的分隔符分割
+-F :紧跟分隔符，表示读入的字段以输入的分隔符分割  
 -v var=value ：进入变量模式 可以进行变量的赋值及调用（调用不需要加$符）
 
 ##### 变量如下:
@@ -27,7 +27,7 @@
 |RSTART|	由match函数所匹配的字符串的第一个位置。
 |SUBSEP|	数组下标分隔符(默认值是\034)。
 |RLENGTH	|由match函数所匹配的字符串的长度。
-##### eg:
+## eg:
 ##### cat test
 first second third  
 1 2 3  
@@ -46,7 +46,7 @@ awk -v OFS=: '{print $1,$2,$3}' test
 ##### result:
 first:second:third  
 1:2:3  
-a:b:c
+a: b:c
 
 #### 输出第一列是数字的行  
 awk  '{ if($1 ~ /[0-9]/){print $0;} }' test  
