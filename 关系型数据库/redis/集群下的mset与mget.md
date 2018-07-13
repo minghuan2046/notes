@@ -11,7 +11,7 @@
 cluster.mset("name", "张三",
               "age", "23"）
 ```
-原因：没提供hash tag无法确定分布到同一分片。
+原因：没提供hash tag无法确定分布到同一分片。  
 redis-cli报错信息:LOT Keys in request don't hash to the same slot
 
 jedis报错信息：No way to dispatch this command to Redis Cluster because keys have different slots.
@@ -26,7 +26,7 @@ list = cluster.mget("{" + prefix + KEY_SPLIT + "}" + "name",
 list = cluster.mget（"name",
                      "age"）
 ```
-报错理由同mset
+报错理由同mset  
 redis-cli报错信息:(error) CROSSSLOT Keys in request don't hash to the same slot
 
 jedis报错信息：No way to dispatch this command to Redis Cluster because keys have different slots.
