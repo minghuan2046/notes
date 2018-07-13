@@ -11,12 +11,10 @@
 cluster.mset("name", "张三",
               "age", "23"）
 ```
-原因：因为没提供hash tag无法确定分布到同一分片，因此将报错：
-redis-cli报错信息:
-LOT Keys in request don't hash to the same slot
+原因：没提供hash tag无法确定分布到同一分片。
+redis-cli报错信息:LOT Keys in request don't hash to the same slot
 
-jedis报错信息：
-No way to dispatch this command to Redis Cluster because keys have different slots.
+jedis报错信息：No way to dispatch this command to Redis Cluster because keys have different slots.
 #### 2.mget
 ##### 正确使用eg：
 ```
@@ -28,10 +26,9 @@ list = cluster.mget("{" + prefix + KEY_SPLIT + "}" + "name",
 list = cluster.mget（"name",
                      "age"）
 ```
-redis-cli报错信息:
-(error) CROSSSLOT Keys in request don't hash to the same slot
+报错理由同mset
+redis-cli报错信息:(error) CROSSSLOT Keys in request don't hash to the same slot
 
-jedis报错信息：
-No way to dispatch this command to Redis Cluster because keys have different slots.
+jedis报错信息：No way to dispatch this command to Redis Cluster because keys have different slots.
 #### 3.jedis
 官方API不支持集群的Pipline操作，目前网上有部分人通过代码实现了自定义的集群Pipline操作，但均有一些限制，具体性能未验证。
