@@ -30,5 +30,5 @@ list = cluster.mget（"name",
 redis-cli报错信息:(error) CROSSSLOT Keys in request don't hash to the same slot
 
 jedis报错信息：No way to dispatch this command to Redis Cluster because keys have different slots.
-#### 3.jedis
-官方API不支持集群的Pipline操作，目前网上有部分人通过代码实现了自定义的集群Pipline操作，但均有一些限制，具体性能未验证。
+#### 3.pipline
+jedis官方API不支持集群的Pipline操作，目前网上有部分人通过代码实现了自定义的集群Pipline操作，但均有一些限制，具体性能未验证。
