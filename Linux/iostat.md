@@ -2,3 +2,38 @@
 
 ## 作用：
 I/O statistics缩写，即输入输出统计，可用于查看CPU，磁盘等活动情况。
+
+## 命令参数
+
+    -c:查看CPU使用情况  
+    -d:查看磁盘使用情况  
+    -k:以KB为单位
+    -m:以M为单位
+    -x:显示详细信息
+## 属性说明
+### CPU属性说明
+|%user|%nice|%system|%iowait|%steal|%idle|
+|:-:|
+|CPU处于用户态时间百分比|CPU处在带nice值的用户态时间百分比|CPU处在系统态时间百分比|CPU等待输入完成时间百分比|管理程序维护另一个虚拟处理器时，虚拟CPU的无意识等待时间百分比|CPU空闲时间百分比|
+
+
+
+### 磁盘属性说明
+
+|Device      |      r/s   |  w/s   |  rkB/s    | wkB/s  | rrqm/s |  wrqm/s | %rrqm | %wrqm| r_await| w_await| aqu-sz |rareq-sz| wareq-sz|  svctm |   %util|
+|:---:|
+|磁盘名|每秒完成读取IO设备次数|每秒写IO设备次数|每秒读取字节数|每秒写入字节数|每秒进行的merge读操作数|每秒进行的merge写操作数|每秒merge读所占百分比|每秒merge写所占百分比|每个读操作所花时间（包括排队）|每个写操作所花时间（包括排队）|平均队列长度|平均每个读请求大小(KB)|平均每个写请求大小(KB)|平均响应时间（不可信）|设备带宽利用率（顺序存储设备这个值达到100%就瓶颈了，但对于ssd和RAID阵列不是）|
+
+上表时间单位均为毫秒
+
+
+## 实例
+### 1.查看某一磁盘状态  
+iostat -d nvme0n1
+
+output:
+```
+Device             tps    kB_read/s    kB_wrtn/s    kB_read    kB_wrtn
+nvme0n1           7.14        68.73        84.22    3289206    4030613
+```
+其中tps表示该设备每秒传输次数，其中多次逻辑IO请求可能被合并为同一个IO请求。
