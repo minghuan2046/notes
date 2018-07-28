@@ -1,3 +1,5 @@
+
+
 # 用法
 mysqlbinlog [option] file
 
