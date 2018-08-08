@@ -67,7 +67,7 @@ insert into testFlashback2(nameShort,nameLong,amount,amountFloat,amountDouble,cr
 ### 更新该条数据
 update testFlashback2 set nameLong='aaa' where id = 1;
 
-查询结果:
+查询结果:  
 ![update](../picture/MyFlash_update.png)
 
 ### 通过mysqlbinlog找到该语句在binlog中的位置
