@@ -1,3 +1,20 @@
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [介绍](#介绍)
+- [安装](#安装)
+	- [下载源码](#下载源码)
+	- [替换一下低版本的一个依赖](#替换一下低版本的一个依赖)
+- [使用](#使用)
+		- [向MySQL中新建一个数据表](#向mysql中新建一个数据表)
+		- [插入一条数据](#插入一条数据)
+		- [更新该条数据](#更新该条数据)
+		- [通过mysqlbinlog找到该语句在binlog中的位置](#通过mysqlbinlog找到该语句在binlog中的位置)
+		- [通过MyFlash工具生成该语句的反向语句](#通过myflash工具生成该语句的反向语句)
+		- [数据恢复](#数据恢复)
+- [拓展](#拓展)
+		- [MyFlash参数](#myflash参数)
+
+<!-- /TOC -->
 # 介绍
 1. 支持MySQL5.6,5.7版本
 2. 支持insert，update，delete操作回滚
@@ -19,7 +36,7 @@ cd  MyFlash
 
 可查看在binary目录下有一个可执行的flashback文件。
 
-## 使用
+# 使用
 ### 向MySQL中新建一个数据表
 ```
 CREATE TABLE `testFlashback2` (
@@ -76,7 +93,7 @@ binlog_output_base.flashback
 
 通过观察即可得到更新之前的数据。
 
-## 拓展
+# 拓展
 ### MyFlash参数
 ```
 --databaseNames             databaseName to apply. if multiple, seperate by comma(,)
