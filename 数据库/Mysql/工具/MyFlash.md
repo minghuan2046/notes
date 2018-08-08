@@ -13,6 +13,7 @@
 	- [数据恢复](#数据恢复)
 - [拓展](#拓展)
 	- [MyFlash参数](#myflash参数)
+		- [参考资料](#参考资料)
 
 <!-- /TOC -->
 # 介绍
@@ -110,3 +111,7 @@ binlog_output_base.flashback
 --include-gtids             gtids to process
 --exclude-gtids             gtids to skip
 ```
+
+
+### 参考资料
+[美团MyFlash](https://github.com/Meituan-Dianping/MyFlash)
