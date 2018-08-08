@@ -16,8 +16,6 @@ I/O statistics缩写，即输入输出统计，可用于查看CPU，磁盘等活
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |CPU处于用户态时间百分比|CPU处在带nice值的用户态时间百分比|CPU处在系统态时间百分比|CPU等待输入完成时间百分比|管理程序维护另一个虚拟处理器时，虚拟CPU的无意识等待时间百分比|CPU空闲时间百分比|
 
-
-
 ### 磁盘属性说明
 
 |Device      |      r/s   |  w/s   |  rkB/s    | wkB/s  | rrqm/s |  wrqm/s | %rrqm | %wrqm| r_await| w_await| aqu-sz |rareq-sz| wareq-sz|  svctm |   %util|
